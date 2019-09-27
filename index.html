@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <title>RTSP-STREAM</title>
+        <div><canvas id="video" width="640" height="360"></canvas></div>
+        <script type="text/javascript" src="jsmpeg.js"></script>
+  
+        <script type="text/javascript">
+        var canvas = document.getElementById('video');
+        var ws = new WebSocket("ws://172.16.16.102/playlist.m3u");
+        var player = new jsmpeg(ws, {canvas: canvas, autoplay: true,audio: false,loop: true})
+
+        </script>
+            
+</html>
